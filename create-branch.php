@@ -9,19 +9,29 @@ if(strlen($_SESSION['alogin'])=="")
     else{
 if(isset($_POST['submit']))
 {
-$classname=$_POST['classname'];
-$classnamenumeric=$_POST['classnamenumeric']; 
-$section=$_POST['section'];
-$sql="INSERT INTO  tblclasses(ClassName,ClassNameNumeric,Section) VALUES(:classname,:classnamenumeric,:section)";
+$branch_id=$_POST['branch_id'];
+$branch_name = $_POST['b_name'];
+$branch_city = $_POST['b_city'];
+$distrcit = $_POST['district'];
+$username = $_POST['username'];
+$password = md5($_POST['password']);
+$branch_type = intval($_POST['branch_type']);
+$sql= @"INSERT INTO tbl_branches (branch_id, b_name,b_city,district,username,password,type) 
+        VALUES (:branch_id, :b_name, :b_city, :district, :username, :password, :branch_type)";
 $query = $dbh->prepare($sql);
-$query->bindParam(':classname',$classname,PDO::PARAM_STR);
-$query->bindParam(':classnamenumeric',$classnamenumeric,PDO::PARAM_STR);
-$query->bindParam(':section',$section,PDO::PARAM_STR);
+$query->bindParam(':branch_id', $branch_id, PDO::PARAM_STR);
+$query->bindParam(':b_name', $branch_name, PDO::PARAM_STR);
+$query->bindParam(':b_city', $branch_city, PDO::PARAM_STR);
+$query->bindParam(':district', $district, POD::PARAM_STR);
+$query->bindParam(':username', $username, PDO::PARAM_STR);
+$query->bindParam(':password', $password, PDO::PARAM_STR);
+$query->bindParam(':branch_type', $branch_type, PDO::PARAM_INT);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$msg="Class Created successfully";
+    $msg="Brnach Created successfully";
+    header('location:manage-branch.php');
 }
 else 
 {
@@ -102,11 +112,6 @@ $error="Something went wrong. Please try again";
 
                         <section class="section">
                             <div class="container-fluid">
-
-                             
-
-                              
-
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2">
                                         <div class="panel">
@@ -203,7 +208,7 @@ else if($error){?>
 
                                                     <div class ="form-group has-success">
                                                         <label for="success" class="control-label">Branch Type</label>
-                                                              <select class="form-control" name="district" title="Please Select a District">
+                                                              <select class="form-control" name="branch_type" title="Please Select a District">
                                                                 <option value="2">District Head</option>
                                                                 <option value="3" selected>Regular Branch</option>
                                                             </select>
