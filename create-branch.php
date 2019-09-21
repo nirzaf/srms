@@ -151,8 +151,7 @@ else if($error){?>
 
                                                     <div class ="form-group has-success">
                                                         <label for="success" class="control-label">Select District</label>
-    
-                                                            <select class="form-control" name="District" title="Please Select a District">
+                                                              <select class="form-control" name="district" title="Please Select a District">
                                                                 <option value="Ampara">Ampara</option>
                                                                 <option value="Anuradhapura">Anuradhapura</option>
                                                                 <option value="Badulla">Badulla</option>
@@ -202,23 +201,19 @@ else if($error){?>
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group has-success">
+                                                    <div class ="form-group has-success">
                                                         <label for="success" class="control-label">Branch Type</label>
-                                                        <div class="">
-                                                            <input type="password" name="confirm_password" class="form-control" required="required" id="success">
-                                                        </div>
+                                                              <select class="form-control" name="district" title="Please Select a District">
+                                                                <option value="2">District Head</option>
+                                                                <option value="3" selected>Regular Branch</option>
+                                                            </select>
                                                     </div>
 
                                                     <div class="form-group has-success">
                                                         <div class="">
                                                            <button type="submit" name="submit" class="btn btn-success btn-labeled">Submit<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
                                                     </div>
-
-
-                                                    
-                                                </form>
-
-                                              
+                                                </form>                                              
                                             </div>
                                         </div>
                                     </div>
