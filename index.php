@@ -15,18 +15,13 @@ $query-> bindParam(':uname', $uname, PDO::PARAM_STR);
 $query-> bindParam(':password', $password, PDO::PARAM_STR);
 $query-> execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-$_SESSION['alogin']=$_POST['username'];
-echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-} else{
-    
+if($query->rowCount() > 0){
+    $_SESSION['alogin']=$_POST['username'];
+    echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+}else{   
     echo "<script>alert('Invalid Details');</script>";
-
+    }
 }
-
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +49,6 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 <section class="section">
                             <div class="row mt-40">
                                 <div class="col-md-10 col-md-offset-1 pt-50">
-
                                     <div class="row mt-30 ">
                                         <div class="col-md-11">
                                             <div class="panel">
@@ -77,15 +71,10 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
                                                             </div>
                                                         </div>
                                                        
-                                                    </form>
-
-                                            
-
-                                                 
+                                                    </form>                                                 
                                                 </div>
                                             </div>
-                                            <!-- /.panel -->
-                                      
+                                            <!-- /.panel -->                                    
                                         </div>
                                         <!-- /.col-md-11 -->
                                     </div>
@@ -135,11 +124,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
                                                     			<button type="submit" name="login" class="btn btn-success btn-labeled pull-right">Sign in<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
                                                     		</div>
                                                     	</div>
-                                                    </form>
-
-                                            
-
-                                                 
+                                                    </form>                                                
                                                 </div>
                                             </div>
                                             <!-- /.panel -->

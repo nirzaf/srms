@@ -2,42 +2,37 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-if(strlen($_SESSION['alogin'])=="")
+if(strlen($_SESSION['alogin'])!=="")
     {   
     header("Location: index.php"); 
     }
     else{
-if(isset($_POST['submit']))
-{
-$branch_id=$_POST['branch_id'];
-$branch_name = $_POST['b_name'];
-$branch_city = $_POST['b_city'];
-$distrcit = $_POST['district'];
-$username = $_POST['username'];
-$password = md5($_POST['password']);
-$branch_type = intval($_POST['branch_type']);
-$sql= @"INSERT INTO tbl_branches (branch_id, b_name,b_city,district,username,password,type) 
-        VALUES (:branch_id, :b_name, :b_city, :district, :username, :password, :branch_type)";
-$query = $dbh->prepare($sql);
-$query->bindParam(':branch_id', $branch_id, PDO::PARAM_STR);
-$query->bindParam(':b_name', $branch_name, PDO::PARAM_STR);
-$query->bindParam(':b_city', $branch_city, PDO::PARAM_STR);
-$query->bindParam(':district', $district, POD::PARAM_STR);
-$query->bindParam(':username', $username, PDO::PARAM_STR);
-$query->bindParam(':password', $password, PDO::PARAM_STR);
-$query->bindParam(':branch_type', $branch_type, PDO::PARAM_INT);
-$query->execute();
-$lastInsertId = $dbh->lastInsertId();
-if($lastInsertId)
-{
+            if(isset($_POST['submit']))
+            {
+            $branch_id=$_POST['branch_id'];
+            $branch_name = $_POST['b_name'];
+            $branch_city = $_POST['b_city'];
+            $distrcit = $_POST['district'];
+            $username = $_POST['username'];
+            $password = md5($_POST['password']);
+            $branch_type = intval($_POST['branch_type']);
+            $sql="INSERT INTO tbl_branches (branch_id, b_name, b_city, district, username, password, type) VALUES (:branch_id, :b_name, :b_city, :district, :username, :password, :branch_type)";
+            $query = $dbh->prepare($sql);
+            $query->bindParam(':branch_id', $branch_id, PDO::PARAM_STR);
+            $query->bindParam(':b_name', $branch_name, PDO::PARAM_STR);
+            $query->bindParam(':b_city', $branch_city, PDO::PARAM_STR);
+            $query->bindParam(':district', $district, POD::PARAM_STR);
+            $query->bindParam(':username', $username, PDO::PARAM_STR);
+            $query->bindParam(':password', $password, PDO::PARAM_STR);
+            $query->bindParam(':branch_type', $branch_type, PDO::PARAM_INT);
+            $query->execute();
+            $lastInsertId = $dbh->lastInsertId();
+if($lastInsertId){
     $msg="Brnach Created successfully";
-    header('location:manage-branch.php');
-}
-else 
-{
-$error="Something went wrong. Please try again";
-}
-
+    //header('location:manage-branch.php');
+}else {
+    $error="Something went wrong. Please try again";
+    }
 }
 ?>
 <!DOCTYPE html>
