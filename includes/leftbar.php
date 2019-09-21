@@ -2,8 +2,8 @@
                         <div class="sidebar-content">
                             <div class="user-info closed">
                                 <img src="http://placehold.it/90/c2c2c2?text=User" alt="John Doe" class="img-circle profile-img">
-                                <h6 class="title">John Doe</h6>
-                                <small class="info">PHP Developer</small>
+                                <h6 class="title">M.F.M Fazrin</h6>
+                                <small class="info">Software engineer</small>
                             </div>
                             <!-- /.user-info -->
 
@@ -18,13 +18,13 @@
                                     </li>
 
                                     <li class="nav-header">
-                                        <span class="">Appearance</span>
+                                        <span class="">Sub Categories</span>
                                     </li>
                                     <li class="has-children">
-                                        <a href="#"><i class="fa fa-file-text"></i> <span>Student Classes</span> <i class="fa fa-angle-right arrow"></i></a>
+                                        <a href="#"><i class="fa fa-file-text"></i> <span>Branches</span> <i class="fa fa-angle-right arrow"></i></a>
                                         <ul class="child-nav">
-                                            <li><a href="create-class.php"><i class="fa fa-bars"></i> <span>Create Class</span></a></li>
-                                            <li><a href="manage-classes.php"><i class="fa fa fa-server"></i> <span>Manage Classes</span></a></li>
+                                            <li><a href="create-branch.php"><i class="fa fa-bars"></i> <span>Create Branch</span></a></li>
+                                            <li><a href="manage-branch.php"><i class="fa fa fa-server"></i> <span>Manage Branch</span></a></li>
                                            
                                         </ul>
                                     </li>
