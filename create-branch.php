@@ -36,7 +36,7 @@ $error="Something went wrong. Please try again";
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SMS Admin Create Class</title>
+        <title>SRMS Admin Create Branch</title>
         <link rel="stylesheet" href="css/bootstrap.css" media="screen" >
         <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" >
         <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen" >
@@ -68,7 +68,7 @@ $error="Something went wrong. Please try again";
 
             <!-- ========== TOP NAVBAR ========== -->
             <?php include('includes/topbar.php');?>   
-          <!-----End Top bar>
+          <!-----End Top bar -->
             <!-- ========== WRAPPER FOR BOTH SIDEBARS & MAIN CONTENT ========== -->
             <div class="content-wrapper">
                 <div class="content-container">
@@ -81,7 +81,7 @@ $error="Something went wrong. Please try again";
                         <div class="container-fluid">
                             <div class="row page-title-div">
                                 <div class="col-md-6">
-                                    <h2 class="title">Create Student Class</h2>
+                                    <h2 class="title">Create Branch Details</h2>
                                 </div>
                                 
                             </div>
@@ -90,8 +90,8 @@ $error="Something went wrong. Please try again";
                                 <div class="col-md-6">
                                     <ul class="breadcrumb">
             							<li><a href="dashboard.php"><i class="fa fa-home"></i> Home</a></li>
-            							<li><a href="#">Classes</a></li>
-            							<li class="active">Create Class</li>
+            							<li><a href="#">Branches</a></li>
+            							<li class="active">Create Branch</li>
             						</ul>
                                 </div>
                                
@@ -112,7 +112,7 @@ $error="Something went wrong. Please try again";
                                         <div class="panel">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <h5>Create Student Class</h5>
+                                                    <h5>Create Branch Details</h5>
                                                 </div>
                                             </div>
            <?php if($msg){?>
@@ -129,28 +129,87 @@ else if($error){?>
 
                                                 <form method="post">
                                                     <div class="form-group has-success">
-                                                        <label for="success" class="control-label">Class Name</label>
+                                                        <label for="success" class="control-label">Branch ID</label>
                                                 		<div class="">
-                                                			<input type="text" name="classname" class="form-control" required="required" id="success">
-                                                            <span class="help-block">Eg- Third, Fouth,Sixth etc</span>
+                                                			<input type="text" name="branch_id" class="form-control" required="required" id="success">
+                                                            <span class="help-block">Eg- SLTJ/BR/00..</span>
                                                 		</div>
                                                 	</div>
                                                        <div class="form-group has-success">
-                                                        <label for="success" class="control-label">Class Name in Numeric</label>
+                                                        <label for="success" class="control-label">Branch Name</label>
                                                         <div class="">
-                                                            <input type="number" name="classnamenumeric" required="required" class="form-control" id="success">
-                                                            <span class="help-block">Eg- 1,2,4,5 etc</span>
+                                                            <input type="text" name="b_name" required="required" class="form-control" id="success">
+                                                            <span class="help-block">Eg- Akurana, Maligawatthe ..</span>
                                                         </div>
                                                     </div>
                                                      <div class="form-group has-success">
-                                                        <label for="success" class="control-label">Section</label>
+                                                        <label for="success" class="control-label">Branch City</label>
                                                         <div class="">
-                                                            <input type="text" name="section" class="form-control" required="required" id="success">
-                                                            <span class="help-block">Eg- A,B,C etc</span>
+                                                            <input type="text" name="b_city" class="form-control" required="required" id="success">
                                                         </div>
                                                     </div>
-  <div class="form-group has-success">
 
+                                                    <div class ="form-group has-success">
+                                                        <label for="success" class="control-label">Select District</label>
+    
+                                                            <select class="form-control" name="District" title="Please Select a District">
+                                                                <option value="Ampara">Ampara</option>
+                                                                <option value="Anuradhapura">Anuradhapura</option>
+                                                                <option value="Badulla">Badulla</option>
+                                                                <option value="Batticaloa">Batticaloa</option>
+                                                                <option value="Colombo">Colombo</option>
+                                                                <option value="Galle">Galle</option>
+                                                                <option value="Gampaha">Gampaha</option>
+                                                                <option value="Hambantota">Hambantota</option>
+                                                                <option value="Jaffna">Jaffna</option>
+                                                                <option value="Kalutara">Kalutara</option>
+                                                                <option value="Kandy">Kandy</option>
+                                                                <option value="Kegalle">Kegalle</option>
+                                                                <option value="Kilinochchi">Kilinochchi</option>
+                                                                <option value="Kurunegala">Kurunegala</option>
+                                                                <option value="Mannar">Mannar</option>
+                                                                <option value="Matale">Matale</option>
+                                                                <option value="Matara">Matara</option>
+                                                                <option value="Moneragala">Moneragala</option>
+                                                                <option value="Mullaitivu">Mullaitivu</option>
+                                                                <option value="Nuwareliya">Nuwareliya</option>
+                                                                <option value="Polonnaruwa">Polonnaruwa</option>
+                                                                <option value="Puttalam">Puttalam</option>
+                                                                <option value="Ratnapura">Ratnapura</option>
+                                                                <option value="Trincomalee">Trincomalee</option>
+                                                                <option value="Vavuniya">Vavuniya</option>
+                                                            </select>
+                                                    </div>
+
+                                                    <div class="form-group has-success">
+                                                        <label for="success" class="control-label">Username</label>
+                                                        <div class="">
+                                                            <input type="text" name="username" class="form-control" required="required" id="success">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group has-success">
+                                                        <label for="success" class="control-label">Password</label>
+                                                        <div class="">
+                                                            <input type="password" name="password" class="form-control" required="required" id="success">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group has-success">
+                                                        <label for="success" class="control-label">Confirm Password</label>
+                                                        <div class="">
+                                                            <input type="password" name="confirm_password" class="form-control" required="required" id="success">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group has-success">
+                                                        <label for="success" class="control-label">Branch Type</label>
+                                                        <div class="">
+                                                            <input type="password" name="confirm_password" class="form-control" required="required" id="success">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group has-success">
                                                         <div class="">
                                                            <button type="submit" name="submit" class="btn btn-success btn-labeled">Submit<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
                                                     </div>
