@@ -8,7 +8,7 @@ if (strlen($_SESSION['alogin']) == "") {
     if (isset($_POST['submit'])) {
         $marks = array();
         $class = $_POST['class'];
-        $studentid = $_POST['studentid'];
+        $studentId = $_POST['studentid'];
         $mark = $_POST['marks'];
 
         $stmt = $dbh->prepare("SELECT tblsubjects.SubjectName,tblsubjects.id FROM tblsubjectcombination join  tblsubjects on  tblsubjects.id=tblsubjectcombination.SubjectId WHERE tblsubjectcombination.ClassId=:cid order by tblsubjects.SubjectName");
@@ -24,7 +24,7 @@ if (strlen($_SESSION['alogin']) == "") {
             $sid = $sid1[$i];
             $sql = "INSERT INTO  tblresult(StudentId,ClassId,SubjectId,marks) VALUES(:studentid,:class,:sid,:marks)";
             $query = $dbh->prepare($sql);
-            $query->bindParam(':studentid', $studentid, PDO::PARAM_STR);
+            $query->bindParam(':studentid', $studentId, PDO::PARAM_STR);
             $query->bindParam(':class', $class, PDO::PARAM_STR);
             $query->bindParam(':sid', $sid, PDO::PARAM_STR);
             $query->bindParam(':marks', $mar, PDO::PARAM_STR);
