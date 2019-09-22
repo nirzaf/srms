@@ -6,7 +6,6 @@ if (strlen($_SESSION['alogin']) == "") {
     header("Location: index.php");
 } else {
     ?>
-
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -30,23 +29,18 @@ if (strlen($_SESSION['alogin']) == "") {
         <?php include('includes/topbar.php'); ?>
         <div class="content-wrapper">
             <div class="content-container">
-
                 <?php include('includes/leftbar.php'); ?>
-
                 <div class="main-page">
                     <div class="container-fluid">
                         <div class="row page-title-div">
                             <div class="col-sm-6">
                                 <h2 class="title">Dashboard</h2>
-
                             </div>
                             <!-- /.col-sm-6 -->
                         </div>
                         <!-- /.row -->
-
                     </div>
                     <!-- /.container-fluid -->
-
                     <section class="section">
                         <div class="container-fluid">
                             <div class="row">
@@ -86,9 +80,9 @@ if (strlen($_SESSION['alogin']) == "") {
                                 <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                    <a class="dashboard-stat bg-warning" href="manage-classes.php">
+                                    <a class="dashboard-stat bg-warning" href="manage-branch.php">
                                         <?php
-                                        $sql2 = "SELECT id from  tblclasses ";
+                                        $sql2 = 'SELECT id from  tblclasses';
                                         $query2 = $dbh->prepare($sql2);
                                         $query2->execute();
                                         $results2 = $query2->fetchAll(PDO::FETCH_OBJ);
@@ -105,7 +99,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                     <a class="dashboard-stat bg-success" href="manage-results.php">
                                         <?php
-                                        $sql3 = "SELECT  distinct StudentId from  tblresult ";
+                                        $sql3 = 'SELECT  distinct StudentId from  tblresult';
                                         $query3 = $dbh->prepare($sql3);
                                         $query3->execute();
                                         $results3 = $query3->fetchAll(PDO::FETCH_OBJ);
